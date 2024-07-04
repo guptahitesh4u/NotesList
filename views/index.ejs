@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<form action="/editdelete" method="POST">
+
+    <ul class="tilesWrap">
+        <% 
+    if (locals.notes.length>0 ) { 
+        
+        for (var i=0; i<notes.length;i++){
+        %>
+        <li>
+          <h2><% i+1 %></h2>
+          <h3>Title <% i+1 %></h3>
+          <p>
+            <% notes[i] %>
+          </p> 
+          
+          <button type="submit" formaction="/edit" name ="edit" value="edit"<% i %>>Edit Note</button>
+          <button type="submit" formaction="/delete" name ="delete" value="delete"<% i %>>Delete</button>
+            
+        </li>
+        <% }
+    } %>
+        
+      </ul>
+    </form>
+</body>
+</html>
