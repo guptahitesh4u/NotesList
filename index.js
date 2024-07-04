@@ -18,10 +18,10 @@ app.get("/", async (req,res)=>{
     await res.render("index.ejs",{notes:notes});
 })
 
-app.post("/edit", (req,res)=>{
-     readFromFile();
+app.post("/edit", async (req,res)=>{
+    await readFromFile();
    
-    res.render("index.ejs",{notes:notes});
+    await res.render("index.ejs",{notes:notes});
 
 })
 
